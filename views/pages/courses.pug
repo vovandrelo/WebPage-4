@@ -1,0 +1,22 @@
+extends ../layouts/main.pug
+
+block content
+    div(class="container")
+        if (courses.length !== 0)
+            h1(class="mt-4") Доступные курсы
+            div(class="d-flex justify-content-around flex-wrap align-self-stretch")
+                each course in courses
+                    div(class="card bg-dark mt-3", style="width: 280px")
+                        div(style="height: 180px;")
+                            img(src=course.url, alt=course.title, style="width: 100%;")
+                        div(class="card-body", style="height: 250px;")
+                            h5(class="card-title")= course.title
+                            p(class="card-text")= course.price + " руб."
+                            div(class="d-grid gap-2")
+                                a(href="/courses/"+course.id, class="btn btn-primary") Открыть курс
+                                a(href=`/courses/${course.id}/edit/`, class="btn btn-primary") Редактировать курс
+                                form(action="/cart/add", method="post", class="d-grid gap-2")
+                                    input(type="hidden", name="courseId", value=course.id)
+                                    button(type="submit" class="btn btn-primary") Купить
+        else
+            h1(class="mt-4") Курсы отсутствуют!

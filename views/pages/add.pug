@@ -1,0 +1,17 @@
+extends ../layouts/main.pug
+
+block content
+    div(class="container")
+        h1(class="mt-4") Добавить курс
+
+        form(action="/add", method="post")
+            div(class="mb-3")
+                label(for="courseName", class="form-label") Название курса:
+                input(type="text", class="form-control", id="courseName", name="courseName")
+            div(class="mb-3")
+                label(for="coursePrice", class="form-label") Цена курса, руб:
+                input(type="text", class="form-control", id="coursePrice", name="coursePrice")
+            div(class="mb-3")
+                label(for="courseImg", class="form-label") URI картинки курса:
+                input(type="text", class="form-control", id="courseImg", name="courseImg")
+            button(type="submit" class="btn btn-lg btn-dark") Добавить

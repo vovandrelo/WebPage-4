@@ -1,0 +1,25 @@
+extends ../layouts/main.pug
+
+block content
+    div(class="container")
+            if (courses.length !== 0)
+                h1(class="mt-4") Корзина
+                table(class="cart table table-dark table-striped fs-5 mt-4")
+                    thead()
+                        tr()
+                            th(scope="col") #
+                            th(scope="col") Название курса
+                            th(scope="col") Цена за шт
+                            th(scope="col") Количество
+                            th(scope="col")
+                    tbody()
+                        each course, i in courses
+                            tr()
+                                th(scope="row")= i+1
+                                td= course.title
+                                td= course.price
+                                td= course.number
+                                td(class="btnDelete", data-idCourse=course.id, style="cursor: pointer;") Удалить
+                p(class="fs-4")!= "Итого: " + price + "руб."
+            else
+                h1(class="mt-4") Корзина пуста!

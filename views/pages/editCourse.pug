@@ -1,0 +1,18 @@
+extends ../layouts/main.pug
+
+block content
+    div(class="container")
+        h1(class="mt-4") Редактирование курса
+
+        form(action="/courses/edit", method="post")
+            div(class="mb-3")
+                label(for="courseName", class="form-label") Название курса
+                input(type="text", class="form-control", id="courseName", name="courseName", value=course.title)
+            div(class="mb-3")
+                label(for="coursePrice", class="form-label") Цена курса
+                input(type="text", class="form-control", id="coursePrice", name="coursePrice", value=course.price)
+            div(class="mb-3")
+                label(for="courseImg", class="form-label") URI картинки курса
+                input(type="text", class="form-control", id="courseImg", name="courseImg", value=course.url)
+            input(type="hidden", name="courseId", value=course.id)
+            button(type="submit" class="btn btn-lg btn-dark") Сохранить

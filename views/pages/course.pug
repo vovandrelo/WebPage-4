@@ -1,0 +1,9 @@
+extends ../layouts/main.pug
+
+block content
+    div(class="container")
+        div(class="card mt-5")
+            img(src=course.url, alt=course.title)
+            div(class="card-body")
+                h5(class="card-title text-dark fs-2 text")= course.title
+                p(class="card-text text-dark fs-2 text")= course.price + "руб."

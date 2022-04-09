@@ -1,0 +1,12 @@
+mixin header
+    nav(class="navbar navbar-dark bg-dark navbar-expand-lg")
+        div(class="container-fluid")
+            a(class="navbar-brand", href="#") Приложение курсов
+            button(class="navbar-toggler", type="button", data-bs-toggle="collapse", data-bs-target="#navbarNavAltMarkup", aria-controls="navbarNavAltMarkup", aria-expanded="false", aria-label="Toggle navigation")
+                span(class="navbar-toggler-icon")
+            div(class="collapse navbar-collapse", id="navbarNavAltMarkup")
+                div(class="navbar-nav")
+                    a(class="nav-link", aria-current="page", href="/") Главная
+                    a(class="nav-link", aria-current="page", href="/courses") Курсы
+                    a(class="nav-link", aria-current="page", href="/add") Добавить курс
+                     a(class="nav-link", aria-current="page", href="/cart") Корзина
